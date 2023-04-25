@@ -1,15 +1,14 @@
 import { Nunito } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/navbar/Navbar';
+import ClientOnly from './components/ClientOnly';
 
 export const metadata = {
   title: 'App Aluguel',
   description: 'Procurando um lugar para chamar de lar? Temos a solução perfeita para você! Venha conferir nossas opções de imóveis para aluguel e encontre o seu novo lar dos sonhos.',
 }
 
-const font = Nunito({
-    subsets: ["latin"]
-});
+const font = Nunito({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -19,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
         <body className={font.className}>
-            <Navbar />
+            <ClientOnly>
+                <Navbar />
+            </ClientOnly>
             {children}
         </body>
     </html>
