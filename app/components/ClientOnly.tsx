@@ -11,7 +11,7 @@ const ClientOnly: React.FC<ClientOnlyProps> = ({children}) => {
 
     useEffect(() => {
         setHasMounted(true);
-    },[hasMouted]);
+    },[]);
 
     if (!hasMouted) return null;
 
