@@ -8,6 +8,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import userRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from "./Modal";
 import Heading from "../Heading";
+import Input from "../inputs/Input";
 
 const RegisterModal = () => {
     const registerModal = userRegisterModal();
@@ -42,6 +43,14 @@ const RegisterModal = () => {
                 title="Bem vindo" 
                 subtitle="Create an account" 
                 center 
+            />
+            <Input
+                id="email"
+                label="Email"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
             />
         </div>
     );
